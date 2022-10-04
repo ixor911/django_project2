@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Home</h1>
+    <h2>Hello django</h2>
+    {% if tasks %}
+        {% for elem in tasks %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ elem.name }}</h3>
+                <p>{{ elem.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>There are no tasks</p>
+    {% endif %}
+{% endblock %}
+
+
